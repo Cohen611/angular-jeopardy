@@ -1,3 +1,26 @@
 body{
-background-image: url('background.gif');
+background-image: url('images/jeopardy.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+.btn{
+  background-color: blue;
+  padding: 20px;
+  color:white;
+  border-radius: 5px solid white;
+  border-radius: 10px;
+  display: block;
+  margin-top: 30px;
+}
+.main-title
+{
+  color:white;
+  text-align: center;
+}
+.ng-binding{
+  color:white;
+  background-color: blue;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
 }

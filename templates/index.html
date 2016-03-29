@@ -1,0 +1,12 @@
+<div class="main">
+<h1 class="main-title">Jeopardy</h1>
+</div>
+
+
+<div class="score">
+  {{score}}
+</div>
+
+<div ng-repeat="category in categories" class="col-md-2">
+  <jeopardy-reader question=category.data></jeopardy-reader>
+</div>

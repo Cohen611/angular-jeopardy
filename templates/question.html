@@ -1,0 +1,37 @@
+
+<div>{{question.title}}</div>
+<div ng-repeat="data in question.clues">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#{{data.id}}">
+    Question {{ data.value }}
+  </button>
+  <div id="{{data.id}}" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+          <p>{{data.question}}</p>
+          <img src="https://lifeafterhavingalife.files.wordpress.com/2011/08/alex-trebek2.jpg" alt="" />
+        </div>
+        <div class="modal-body {{clue.id}}" style="display:none; " >
+            <p>
+              <img src="https://lifeafterhavingalife.files.wordpress.com/2011/08/alex-trebek2.jpg" alt="" />
+              Answer Is: {{clue.answer}}
+              </p>
+           </div>
+           <div class="modal-footer {{clue.id}}">
+             <form role="form-group" ng-submit="addScore(userInput,clue.answer,clue.value)">
+               <input type="text" name="" ng-model="userInput" class="form-control" placeholder="Enter Answer"/>
+            <button ng-click="push(clue.id)" type="submit" class="btn btn-default" btn-toggle="modal-body">Submit</button>
+            </div>
+            <div class="modal-footer {{clue.id}}" style="display:none">
+              <form role="form-group" ng-submit="addScore(userInput,clue.answer,clue.value)">
+                <input type="text" name="" ng-model="userInput" class="form-control" />
+             <button ng-click="disableBtn(clue.id)" type="button" class="btn btn-default" btn-toggle="modal-body">Close</button>
+             </div>
+             </form>
+           </div>
